@@ -5,15 +5,18 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
 const app = express();
 
-// serve frontend build
+// Serve frontend build files
 app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
+// Simple API route
 app.get("/api", (req, res) => {
-  res.json({ message: "Backend API working!" });
+  res.json({ message: "Backend API working properly ✅" });
 });
 
+// Catch-all for frontend routes
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
 });
