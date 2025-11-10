@@ -1,0 +1,12 @@
+{
+  "name": "free-bot-fullstack",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build",
+    "start": "node backend/server.js"
+  },
+  "engines": {
+    "node": ">=18 <26"
+  }
+}
